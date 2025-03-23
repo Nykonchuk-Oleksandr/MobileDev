@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <!-- Підключення React і ReactDOM через CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- Підключення Babel для трансформації JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    /* Базові стилі */
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .task-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    .task-filter button {
+      margin-right: 10px;
+    }
+    form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    input {
+      flex: 1;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Контейнер для React-додатку -->
+  <div id="root"></div>
+
+  <!-- Підключення всіх JavaScript-файлів -->
+  <script type="text/babel" src="TaskContext.js"></script>
+  <script type="text/babel" src="TaskForm.js"></script>
+  <script type="text/babel" src="TaskItem.js"></script>
+  <script type="text/babel" src="TaskList.js"></script>
+  <script type="text/babel" src="TaskFilter.js"></script>
+  <script type="text/babel" src="App.js"></script>
+
+  <!-- Скрипт для рендерингу -->
+  <script type="text/babel">
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(
+      <TaskProvider>
+        <App />
+      </TaskProvider>
+    );
+  </script>
+</body>
+</html>
